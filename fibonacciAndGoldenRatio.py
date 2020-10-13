@@ -1,6 +1,16 @@
-# CHANGE IT BACK TO 100 if you want
-
+from matplotlib import pyplot as plt
 import traceback
+
+def drawGraph(ratioList):
+    figure = plt.figure()
+    
+
+    graph = figure.add_subplot(111)
+    barGraph = figure.add_subplot(121)
+    
+    graph.plot(ratioList)
+
+    plt.show()
 
 def fibonacci():
     prevNum = 1 #previous number
@@ -27,7 +37,7 @@ def getRatio(fibNumList):
 
 if __name__ == "__main__":
     try:
-        print(getRatio(fibonacci()))
+        drawGraph(getRatio(fibonacci()))
 
     except:
         traceback.print_exc()
